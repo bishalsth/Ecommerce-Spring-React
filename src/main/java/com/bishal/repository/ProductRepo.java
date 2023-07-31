@@ -20,7 +20,7 @@ public interface ProductRepo extends JpaRepository<Product,Long> {
             "ORDER BY " +
             "CASE WHEN :sort = 'price_low' THEN p.discountedPrice END ASC, " +
             "CASE WHEN :sort = 'price_high' THEN p.discountedPrice END DESC")
-    
+
     public List<Product> filterProducts(@RequestParam("category") String category,
                                         @RequestParam("minPrice") Integer minPrice,
                                         @RequestParam("maxPrice") Integer maxPrice,
